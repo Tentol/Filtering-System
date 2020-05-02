@@ -1,0 +1,12 @@
+strict digraph {
+subgraph cluster_204_Mallory2 {
+label = "Mallory2"
+"204_fallback" [label="fallback"]
+"204_getJackpot" [label="getJackpot"]
+"204_attack" [label="attack"]
+"204_slitherConstructorVariables" [label="slitherConstructorVariables"]
+"204_Mallory2" [label="Mallory2"]
+}subgraph cluster_solidity {
+label = "[Solidity]"
+}
+}

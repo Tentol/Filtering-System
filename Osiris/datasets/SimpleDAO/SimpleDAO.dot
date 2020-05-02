@@ -1,0 +1,10 @@
+strict digraph {
+subgraph cluster_68_SimpleDAO {
+label = "SimpleDAO"
+"68_queryCredit" [label="queryCredit"]
+"68_withdraw" [label="withdraw"]
+"68_donate" [label="donate"]
+}subgraph cluster_solidity {
+label = "[Solidity]"
+}
+}

@@ -1,0 +1,26 @@
+strict digraph {
+subgraph cluster_204_Mallory2 {
+label = "Mallory2"
+"204_fallback" [label="fallback"]
+"204_Mallory2" [label="Mallory2"]
+"204_getJackpot" [label="getJackpot"]
+"204_attack" [label="attack"]
+}subgraph cluster_68_SimpleDAO {
+label = "SimpleDAO"
+"68_queryCredit" [label="queryCredit"]
+"68_withdraw" [label="withdraw"]
+"68_donate" [label="donate"]
+}subgraph cluster_117_Mallory {
+label = "Mallory"
+"117_Mallory" [label="Mallory"]
+"117_getJackpot" [label="getJackpot"]
+"117_fallback" [label="fallback"]
+}subgraph cluster_solidity {
+label = "[Solidity]"
+}"204_fallback" -> "68_withdraw"
+"204_attack" -> "68_withdraw"
+"117_fallback" -> "68_withdraw"
+"204_attack" -> "68_donate"
+"117_fallback" -> "68_queryCredit"
+"204_getJackpot" -> "68_withdraw"
+}

@@ -1,0 +1,10 @@
+strict digraph {
+subgraph cluster_117_Mallory {
+label = "Mallory"
+"117_Mallory" [label="Mallory"]
+"117_getJackpot" [label="getJackpot"]
+"117_fallback" [label="fallback"]
+}subgraph cluster_solidity {
+label = "[Solidity]"
+}
+}

@@ -1,0 +1,8 @@
+strict digraph {
+subgraph cluster_48_tokenRecipient {
+label = "tokenRecipient"
+"48_receiveApproval" [label="receiveApproval"]
+}subgraph cluster_solidity {
+label = "[Solidity]"
+}
+}

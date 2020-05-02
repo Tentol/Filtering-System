@@ -1,0 +1,285 @@
+EVM assembly:
+    /* "SimpleDAO_0.4.19.sol":26:490  contract SimpleDAO {... */
+  mstore(0x40, 0x60)
+  jumpi(tag_1, iszero(callvalue))
+  0x0
+  dup1
+  revert
+tag_1:
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x0
+  codecopy
+  0x0
+  return
+stop
+
+sub_0: assembly {
+        /* "SimpleDAO_0.4.19.sol":26:490  contract SimpleDAO {... */
+      mstore(0x40, 0x60)
+      jumpi(tag_1, lt(calldatasize, 0x4))
+      and(div(calldataload(0x0), 0x100000000000000000000000000000000000000000000000000000000), 0xffffffff)
+      0x362a95
+      dup2
+      eq
+      tag_2
+      jumpi
+      dup1
+      0x2e1a7d4d
+      eq
+      tag_3
+      jumpi
+      dup1
+      0x59f1286d
+      eq
+      tag_4
+      jumpi
+      dup1
+      0xd5d44d80
+      eq
+      tag_5
+      jumpi
+    tag_1:
+      0x0
+      dup1
+      revert
+        /* "SimpleDAO_0.4.19.sol":93:170  function donate(address to) payable public {... */
+    tag_2:
+      tag_6
+      and(calldataload(0x4), sub(exp(0x2, 0xa0), 0x1))
+      jump(tag_7)
+    tag_6:
+      stop
+        /* "SimpleDAO_0.4.19.sol":174:397  function withdraw(uint amount) public returns (bool) {... */
+    tag_3:
+      jumpi(tag_8, iszero(callvalue))
+      0x0
+      dup1
+      revert
+    tag_8:
+      tag_9
+      calldataload(0x4)
+      jump(tag_10)
+    tag_9:
+      mload(0x40)
+      swap1
+      iszero
+      iszero
+      dup2
+      mstore
+      0x20
+      add
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "SimpleDAO_0.4.19.sol":401:488  function queryCredit(address to) public view returns (uint){... */
+    tag_4:
+      jumpi(tag_11, iszero(callvalue))
+      0x0
+      dup1
+      revert
+    tag_11:
+      tag_12
+      and(calldataload(0x4), sub(exp(0x2, 0xa0), 0x1))
+      jump(tag_13)
+    tag_12:
+      mload(0x40)
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "SimpleDAO_0.4.19.sol":49:88  mapping (address => uint) public credit */
+    tag_5:
+      jumpi(tag_14, iszero(callvalue))
+      0x0
+      dup1
+      revert
+    tag_14:
+      tag_12
+      and(calldataload(0x4), sub(exp(0x2, 0xa0), 0x1))
+      jump(tag_16)
+        /* "SimpleDAO_0.4.19.sol":93:170  function donate(address to) payable public {... */
+    tag_7:
+      sub(exp(0x2, 0xa0), 0x1)
+        /* "SimpleDAO_0.4.19.sol":142:152  credit[to] */
+      and
+        /* "SimpleDAO_0.4.19.sol":142:148  credit */
+      0x0
+        /* "SimpleDAO_0.4.19.sol":142:152  credit[to] */
+      swap1
+      dup2
+      mstore
+      0x20
+      dup2
+      swap1
+      mstore
+      0x40
+      swap1
+      keccak256
+        /* "SimpleDAO_0.4.19.sol":142:165  credit[to] += msg.value */
+      dup1
+      sload
+        /* "SimpleDAO_0.4.19.sol":156:165  msg.value */
+      callvalue
+        /* "SimpleDAO_0.4.19.sol":142:165  credit[to] += msg.value */
+      add
+      swap1
+      sstore
+        /* "SimpleDAO_0.4.19.sol":93:170  function donate(address to) payable public {... */
+      jump	// out
+        /* "SimpleDAO_0.4.19.sol":174:397  function withdraw(uint amount) public returns (bool) {... */
+    tag_10:
+      sub(exp(0x2, 0xa0), 0x1)
+        /* "SimpleDAO_0.4.19.sol":244:254  msg.sender */
+      caller
+        /* "SimpleDAO_0.4.19.sol":237:255  credit[msg.sender] */
+      and
+        /* "SimpleDAO_0.4.19.sol":221:225  bool */
+      0x0
+        /* "SimpleDAO_0.4.19.sol":237:255  credit[msg.sender] */
+      swap1
+      dup2
+      mstore
+      0x20
+      dup2
+      swap1
+      mstore
+      0x40
+      dup2
+      keccak256
+      sload
+        /* "SimpleDAO_0.4.19.sol":221:225  bool */
+      dup2
+      swap1
+        /* "SimpleDAO_0.4.19.sol":237:264  credit[msg.sender]>= amount */
+      dup4
+      swap1
+      lt
+        /* "SimpleDAO_0.4.19.sol":233:375  if (credit[msg.sender]>= amount) {... */
+      tag_19
+      jumpi
+        /* "SimpleDAO_0.4.19.sol":285:295  msg.sender */
+      caller
+      sub(exp(0x2, 0xa0), 0x1)
+        /* "SimpleDAO_0.4.19.sol":285:300  msg.sender.call */
+      and
+        /* "SimpleDAO_0.4.19.sol":307:313  amount */
+      dup4
+        /* "SimpleDAO_0.4.19.sol":285:316  msg.sender.call.value(amount)() */
+      mload(0x40)
+      0x0
+      mload(0x40)
+      dup1
+      dup4
+      sub
+      dup2
+      dup6
+      dup8
+      gas
+      call
+      sub(exp(0x2, 0xa0), 0x1)
+        /* "SimpleDAO_0.4.19.sol":331:341  msg.sender */
+      caller
+        /* "SimpleDAO_0.4.19.sol":324:342  credit[msg.sender] */
+      and
+        /* "SimpleDAO_0.4.19.sol":324:330  credit */
+      0x0
+        /* "SimpleDAO_0.4.19.sol":324:342  credit[msg.sender] */
+      swap1
+      dup2
+      mstore
+      0x20
+      dup2
+      swap1
+      mstore
+      0x40
+      swap1
+      keccak256
+        /* "SimpleDAO_0.4.19.sol":324:350  credit[msg.sender]-=amount */
+      dup1
+      sload
+      dup9
+      swap1
+      sub
+      swap1
+      sstore
+        /* "SimpleDAO_0.4.19.sol":285:316  msg.sender.call.value(amount)() */
+      swap5
+      pop
+      dup5
+      swap4
+      pop
+        /* "SimpleDAO_0.4.19.sol":358:368  return res */
+      tag_18
+      swap3
+      pop
+      pop
+      pop
+      jump
+        /* "SimpleDAO_0.4.19.sol":233:375  if (credit[msg.sender]>= amount) {... */
+    tag_19:
+        /* "SimpleDAO_0.4.19.sol":387:392  false */
+      0x0
+        /* "SimpleDAO_0.4.19.sol":380:392  return false */
+      swap2
+      pop
+        /* "SimpleDAO_0.4.19.sol":174:397  function withdraw(uint amount) public returns (bool) {... */
+    tag_18:
+      pop
+      swap2
+      swap1
+      pop
+      jump	// out
+        /* "SimpleDAO_0.4.19.sol":401:488  function queryCredit(address to) public view returns (uint){... */
+    tag_13:
+      sub(exp(0x2, 0xa0), 0x1)
+        /* "SimpleDAO_0.4.19.sol":473:483  credit[to] */
+      and
+        /* "SimpleDAO_0.4.19.sol":455:459  uint */
+      0x0
+        /* "SimpleDAO_0.4.19.sol":473:483  credit[to] */
+      swap1
+      dup2
+      mstore
+      0x20
+      dup2
+      swap1
+      mstore
+      0x40
+      swap1
+      keccak256
+      sload
+      swap1
+        /* "SimpleDAO_0.4.19.sol":401:488  function queryCredit(address to) public view returns (uint){... */
+      jump	// out
+        /* "SimpleDAO_0.4.19.sol":49:88  mapping (address => uint) public credit */
+    tag_16:
+      0x0
+      0x20
+      dup2
+      swap1
+      mstore
+      swap1
+      dup2
+      mstore
+      0x40
+      swap1
+      keccak256
+      sload
+      dup2
+      jump	// out
+
+    auxdata: 0xa165627a7a7230582087b73a3ac6eb0343a741a49a3760302132ac7f3c0eb8ed4c3ebc94bdac3af8430029
+}
+

@@ -1,0 +1,1 @@
+['newSellPrice', 'newBuyPrice', '_spender', '_value', '_from', '_to', 'newOwner']
